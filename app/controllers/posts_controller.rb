@@ -1,7 +1,6 @@
 class PostsController < ApplicationController
 
 def index
-
 end
 
 def new
@@ -9,12 +8,20 @@ def new
 end
 
 def create
-@post = Post.new(params.require(:post).permit(:date,:rationale))
-@post.save
-redirect_to @post
+@post = Post.new(post_params)
+ if  @post.save
+ redirect_to @post,notice:"your post was sucreated successfully"
+ else
+render  :new
 end
 
 def show
 @post= Post.find(params[:id])
+end
+
+private
+
+def post_params
+params.require(:post).permit(:date,:rationale)
 end
 end
