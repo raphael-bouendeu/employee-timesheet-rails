@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>OvertimeVersionSqlite</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <head>
+      <title>Bootstraper</title>
+      <%= csrf_meta_tags %> <%= csp_meta_tag %>
+
+      <!-- This refers to app/javascript/stylesheets/application.scss-->
+      <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload'
+      %> <%= javascript_pack_tag 'application', 'data-turbolinks-track':
+      'reload' %>
+    </head>
   </head>
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <%= render 'layouts/navbar'%> <%= yield %>
   </body>
 </html>
